@@ -1,0 +1,36 @@
+﻿@page "/products/edit/{id:int}"
+@model BookAPP.Pages.Products.UpdateProduct
+@{
+}
+
+<h1>Edit Book</h1>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="mb-3">
+                <label asp-for="UpdateProductModel.Name">Name</label>
+                <input asp-for="UpdateProductModel.Name" class="form-control" />
+                <span asp-validation-for="UpdateProductModel.Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="UpdateProductModel.Category">Category</label>
+                <select asp-for="UpdateProductModel.Category" class="form-control">
+                    <option value="Auswahl-Option 1">Auswahl numero uno</option>
+                    <option value="Auswahl-Option 2">Auswahl numero dö</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="UpdateProductModel.Price">Preis</label>
+                <input asp-for="UpdateProductModel.Price" class="form-control" />
+                <span asp-validation-for="UpdateProductModel.Price"></span>
+            </div>
+
+            <button asp-page-handler="edit" class="btn btn-success">Bestätigen</button>
+            <button asp-page-handler="delete" class="btn btn-danger float-end">Löschen</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@page "/products/add"
+@model BookAPP.Pages.Products.AddProductModel
+@{
+}
+
+<h1>Add New Product</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div> @*to show all the validation messages at one place (the top)*@
+            <div class="mb-3"> @*container for input*@
+                <label asp-for="NewProductmodel.Name">Name</label>
+                <input asp-for="NewProductmodel.Name" class="form-control" />
+                <span asp-validation-for="NewProductmodel.Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NewProductmodel.Category">Category</label>
+                <select asp-for="NewProductmodel.Category" class="form-control">
+                    <option value="Auswahl-Option 1">Auswahl numero uno</option>
+                    <option value="Auswahl-Option 2">Auswahl numero dö</option>
+                </select>
+                </div>
+            <div class="mb-3">
+                <label asp-for="NewProductmodel.Price">Preis</label>
+                <input asp-for="NewProductmodel.Price" class="form-control" />
+                <span asp-validation-for="NewProductmodel.Price"></span>
+            </div>
+            
+            <button class="btn btn-success">Bestätigen</button>
+            </form>
+    </div>
+</div>
